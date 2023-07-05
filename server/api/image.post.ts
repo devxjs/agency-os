@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
 
     await page.goto(url)
 
-    await page.waitForSelector('body')
+    await page.waitForLoadState('networkidle')
 
     const screenshot = await page.screenshot({
       type: 'jpeg',
